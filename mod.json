@@ -6,5 +6,13 @@
     "description": "Adds unbalanced ideas to Balatro.",
     "version": "0.5.15~b",
     "git_url": "https://github.com/SpectralPack/Cryptid"
+  },
+  {
+    "id": "DismissAlert",
+    "name": "DismissAlert",
+    "author": "Breezebuilder",
+    "description": "Click to dismiss discovery alert icons.",
+    "version": "1.0.0",
+    "git_url": "https://github.com/Breezebuilder/DismissAlert"
   }
 ]
