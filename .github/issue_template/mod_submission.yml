@@ -1,0 +1,55 @@
+name: "Mod Submission"
+description: "Submit a Balatro mod to the JokerDeck Index"
+title: "[Submission]: "
+labels: ["mod-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a mod! Please fill out the form accurately.
+  - type: input
+    id: mod_id
+    attributes:
+      label: "Mod ID"
+      description: "The strict, unique folder name ID (e.g., Cryptid)"
+      placeholder: "modID"
+    validations:
+      required: true
+  - type: input
+    id: mod_name
+    attributes:
+      label: "Display Name"
+      description: "The clean name of the mod"
+      placeholder: "Mod Name"
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: "Author(s)"
+      description: "A single flat string listing the authors"
+      placeholder: "SomePerson"
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: "Description"
+      description: "Keep it clean and concise"
+      placeholder: "My very cool mod"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: "Current Version"
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: git_url
+    attributes:
+      label: "GitHub Repository URL"
+      placeholder: "https://github.com/YOURUSER/REPO"
+    validations:
+      required: true

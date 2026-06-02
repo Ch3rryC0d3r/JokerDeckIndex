@@ -1,0 +1,44 @@
+name: Process Mod Submission
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  update-index:
+    if: github.event.label.name == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Save Issue Data to File
+        run: |
+          echo "${{ github.event.issue.body }}" > issue_body.txt
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+
+      - name: Run Processing Script
+        run: python process_submission.py
+        env:
+          ISSUE_BODY_PATH: issue_body.txt
+
+      - name: Create Pull Request for Review
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: update index from submission #${{ github.event.issue.number }}"
+          title: "Merge Mod Submission: ${{ github.event.issue.title }}"
+          body: "Closes #${{ github.event.issue.number }}. Automatically generated from mod-submission pipeline verification tools."
+          branch: "submission-update-${{ github.event.issue.number }}"
+          base: "main"
+          delete-branch: true
+
+      - name: Comment on Success Action
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: "Success! PR in review..."
