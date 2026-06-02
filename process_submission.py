@@ -22,7 +22,7 @@ def main():
     try:
         mod_id = get_field("Mod ID")
         mod_name = get_field("Display Name")
-        author = get_field("Author\(s\)")
+        author = get_field("Author\(s\)") if get_field("Author\(s\)") else get_field("Author(s)")
         description = get_field("Description")
         version = get_field("Current Version")
         git_url = get_field("GitHub Repository URL")
@@ -40,7 +40,7 @@ def main():
         }
 
         # Load existing index file
-        json_file = "mods.json"
+        json_file = "mod.json"
         if os.path.exists(json_file):
             with open(json_file, "r", encoding="utf-8") as f:
                 try:
