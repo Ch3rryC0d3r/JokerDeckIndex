@@ -30,5 +30,13 @@
     "description": "Will these Cats take over the world?",
     "version": "0.0.1a",
     "git_url": "https://git.gay/hazelpy/BalaCats"
+  },
+  {
+    "id": "HangedMan",
+    "name": "Hanged Man",
+    "author": "Kusane Hexaku",
+    "description": "The exact opposite of Cryptid --- adding questionable, situational, and outright bad Jokers to the game",
+    "version": "0.1.0-bugfix1",
+    "git_url": "https://github.com/KusaneHexaku/Hanged-Man"
   }
 ]
