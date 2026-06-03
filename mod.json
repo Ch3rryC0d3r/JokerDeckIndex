@@ -30,5 +30,13 @@
     "description": "Adds a whole lot of things based on Geometry Dash Levels and Icons!",
     "version": "0.0.2c",
     "git_url": "https://github.com/FireIce421/BalatroDash"
+  },
+  {
+    "id": "BalaCats",
+    "name": "BalaCats",
+    "author": "Hazelpy, Others",
+    "description": "Will these Cats take over the world?",
+    "version": "0.0.1a",
+    "git_url": "https://github.com/Ch3rryC0d3r/BalaCats"
   }
 ]
