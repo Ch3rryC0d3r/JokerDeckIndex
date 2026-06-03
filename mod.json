@@ -16,14 +16,6 @@
     "git_url": "https://github.com/Breezebuilder/DismissAlert"
   },
   {
-    "id": "galdur",
-    "name": "Galdur",
-    "author": "Eremel_",
-    "description": "A modification to the run setup screen to ease use.",
-    "version": "1.2.1e",
-    "git_url": "https://github.com/Eremel/Galdur"
-  },
-  {
     "id": "bdash",
     "name": "Balatro Dash",
     "author": "FireIce, Gud",
