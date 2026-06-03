@@ -22,5 +22,13 @@
     "description": "A modification to the run setup screen to ease use.",
     "version": "1.2.1e",
     "git_url": "https://github.com/Eremel/Galdur"
+  },
+  {
+    "id": "bdash",
+    "name": "Balatro Dash",
+    "author": "FireIce, Gud",
+    "description": "Adds a whole lot of things based on Geometry Dash Levels and Icons!",
+    "version": "0.0.2c",
+    "git_url": "https://github.com/FireIce421/BalatroDash"
   }
 ]
