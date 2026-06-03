@@ -10,7 +10,10 @@ permissions:
 
 jobs:
   update-index:
-    if: github.event.label.name == 'approved' && github.event.sender.login == github.repository_owner
+    # Trigger if approved by the owner AND labeled either submission or update
+    if: >
+      github.event.sender.login == github.repository_owner && 
+      (github.event.label.name == 'approved' || github.event.label.name == 'approved-update')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
