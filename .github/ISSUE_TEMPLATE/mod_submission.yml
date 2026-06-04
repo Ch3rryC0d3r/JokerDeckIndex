@@ -5,11 +5,11 @@ labels: ["mod-submission"]
 body:
   - type: markdown
     attributes:
-      value: "Thanks for submitting! The system will auto-scrape your repo for a JSON manifest + Icon (Icon is not required). If you could tell your users 'Now available on JokerDeck' or similar, that would mean so much 🤍"
+      value: "Thanks for submitting! The system will auto-scrape your repo for a JSON manifest + Icon (Icon is not required).\n\nIf you could tell your users 'Now available on JokerDeck' or something similar, that would mean so much 🤍"
   - type: input
     id: git_url
     attributes:
       label: "GitHub Repository URL"
-      placeholder: "https://github.com/Eremel/Galdur"
+      placeholder: "https://github.com/YourUser/RepoName"
     validations:
       required: true
