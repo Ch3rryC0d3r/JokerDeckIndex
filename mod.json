@@ -46,5 +46,13 @@
     "description": "A collection of vanilla-friendly Jokers (and more) made by yours truly.",
     "version": "2.2.6",
     "git_url": "https://github.com/pi-cubed-cat/pi_cubeds_jokers"
+  },
+  {
+    "id": "cartomancer",
+    "name": "Cartomancer",
+    "author": "stupxd aka stupid",
+    "description": "Quality of life features and optimizations",
+    "version": "4.17c",
+    "git_url": "https://github.com/stupxd/Cartomancer"
   }
 ]
