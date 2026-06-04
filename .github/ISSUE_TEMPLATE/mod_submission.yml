@@ -5,7 +5,7 @@ labels: ["mod-submission"]
 body:
   - type: markdown
     attributes:
-      value: "Thanks for submitting! The system will automatically scrape your repository root for a valid JSON manifest."
+      value: "Thanks for submitting! The system will auto-scrape your repo for a JSON manifest + Icon (Icon is not required). If you could tell your users 'Now available on JokerDeck' or similar, that would mean so much 🤍"
   - type: input
     id: git_url
     attributes:
