@@ -38,5 +38,13 @@
     "description": "The exact opposite of Cryptid --- adding questionable, situational, and outright bad Jokers to the game",
     "version": "0.1.0-bugfix1",
     "git_url": "https://github.com/KusaneHexaku/Hanged-Man"
+  },
+  {
+    "id": "picubedsjokers",
+    "name": "pi_cubed's Jokers",
+    "author": "pi_cubed",
+    "description": "A collection of vanilla-friendly Jokers (and more) made by yours truly.",
+    "version": "2.2.6",
+    "git_url": "https://github.com/pi-cubed-cat/pi_cubeds_jokers"
   }
 ]
