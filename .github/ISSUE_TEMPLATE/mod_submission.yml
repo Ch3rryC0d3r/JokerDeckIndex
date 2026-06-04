@@ -5,7 +5,7 @@ labels: ["mod-submission"]
 body:
   - type: markdown
     attributes:
-      value: "Thanks for submitting! The system will auto-scrape your repo for a JSON manifest + Icon (Icon is not required).\n\nIf you could tell your users 'Now available on JokerDeck' or something similar, that would mean so much 🤍"
+      value: "Thanks for submitting! The system will auto-scrape your repo for a JSON manifest + Icon (Icon is not required).\n\nIf you could tell your users 'Now available on JokerDeck' or something similar, that would mean so much 🤍\n\n---\n**Submission Guidelines**\n- Mod must be for Balatro (nothing unrelated)\n- Must have a public repository (GitHub or similar)\n- Repo must contain a valid JSON manifest with at least: `id`, `name`, `description`, `version`\n- No malicious, harmful, or illegal content\n- Must be functional enough to install and load\n- Must be of reasonable quality (a single throwaway joker with no effort won't be approved)\n- If your mod is removed, check [the forum](https://discord.com/channels/1116389027176787968/1511415120515956797) for details on why"
   - type: input
     id: git_url
     attributes:
