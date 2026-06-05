@@ -34,5 +34,6 @@ jobs:
             git commit -m "chore: automatic daily manifest version sync"
             git push origin main
           else
-            print "No mod updates found today."
+            # Changed 'print' to 'echo' so bash doesn't throw a 127 error
+            echo "No mod updates found today."
           fi
