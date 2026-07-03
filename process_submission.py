@@ -7,7 +7,9 @@ import urllib.request
 def fetch_json_api(url):
     req = urllib.request.Request(url, headers={"User-Agent": "JokerDeck-Indexer"})
     with urllib.request.urlopen(req, timeout=10) as response:
-        return json.loads(response.read().decode("utf-8"))
+        raw = response.read().decode("utf-8")
+        raw = re.sub(r',\s*([}\]])', r'\1', raw)
+        return json.loads(raw)
 
 def main():
     issue_body_path = os.getenv("ISSUE_BODY_PATH")
