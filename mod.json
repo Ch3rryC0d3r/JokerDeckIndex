@@ -78,5 +78,13 @@
     "description": "A Balatro mod.",
     "version": "1.1.2",
     "git_url": "https://github.com/ouiiskey/Manifold"
+  },
+  {
+    "id": "TOGAPack",
+    "name": "TOGA's Stuff",
+    "author": "TheOneGoofAli",
+    "description": "Personal timewaster project with a few references here and there.",
+    "version": "1.15.0a",
+    "git_url": "https://github.com/TheOneGoofAli/TOGAPackBalatro"
   }
 ]
