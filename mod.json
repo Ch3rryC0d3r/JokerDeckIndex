@@ -88,6 +88,14 @@
     "git_url": "https://github.com/TheOneGoofAli/TOGAPackBalatro"
   },
   {
+    "id": "googletranslatro",
+    "name": "Google Translatro",
+    "author": "Eris",
+    "description": "Adds language where everything is badly google translated",
+    "version": "1.1.0b",
+    "git_url": "https://github.com/borb43/google-translatro"
+  },
+  {
     "id": "hypernova",
     "name": "Hypernova",
     "author": "Eris, & more",
