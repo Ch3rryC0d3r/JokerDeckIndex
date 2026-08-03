@@ -21,7 +21,7 @@ def main():
         content = f.read()
 
     # Match URLs for GitHub or other Git platforms (like git.gay, codeberg, etc.)
-    url_match = re.search(rf"### GitHub Repository URL\s*\n\s*(https?://[^\s\n\r]+)", content)
+    url_match = re.search(r"### GitHub Repository URL\s*\n\s*(https?://[^\s\n\r]+)", content)
     if not url_match:
         print("Error: Could not extract a valid repository URL from submission.")
         sys.exit(1)
@@ -60,16 +60,16 @@ def main():
         owner, repo = path_parts[0], path_parts[1]
 
         try:
-            # ask GitHub API for repository details to find the true default branch
+            # Ask GitHub API for repository details to find the true default branch
             repo_api_url = f"https://api.github.com/repos/{owner}/{repo}"
             repo_info = fetch_json_api(repo_api_url)
             default_branch = repo_info.get("default_branch", "main")
             
-            # grab the directory structure tree of the root folder
+            # Grab directory contents
             tree_api_url = f"https://api.github.com/repos/{owner}/{repo}/contents?ref={default_branch}"
             directory_contents = fetch_json_api(tree_api_url)
             
-            # filter down to find any JSON files living in the root directory
+            # Find JSON files in root
             json_files = [item["name"] for item in directory_contents if item["type"] == "file" and item["name"].lower().endswith(".json")]
             
             if not json_files:
@@ -88,22 +88,18 @@ def main():
         except Exception as e:
             print(f"GitHub API Scraper Endpoint Failure: {e}")
 
-    # Verify if any data was successfully captured across both tracking routes
     if not manifest_data:
         print("Error: Failed to extract a valid mod manifest structure from the target destination.")
         sys.exit(1)
 
     print(f"Successfully located manifest matching target: {chosen_file}")
 
-    # Extract fields matching your fallback criteria normalization mapping rules
     mod_id = manifest_data.get("id") or manifest_data.get("name") or manifest_data.get("display_name")
     mod_name = manifest_data.get("name") or manifest_data.get("display_name") or manifest_data.get("id")
     
-    # Format author if it's an array/list versus a flat string
     author_raw = manifest_data.get("author", "Unknown")
     author = ", ".join(author_raw) if isinstance(author_raw, list) else str(author_raw)
 
-    # Build the final entry for your master layout index file
     new_mod = {
         "id": str(mod_id).strip(),
         "name": str(mod_name).strip(),
@@ -130,6 +126,8 @@ def main():
     else:
         mods_data.append(new_mod)
         print(f"Injecting brand new database entry: {new_mod['name']}")
+
+    mods_data.sort(key=lambda x: str(x.get("id", "")).lower())
 
     with open(json_file, "w", encoding="utf-8") as f:
         json.dump(mods_data, f, indent=2, ensure_ascii=False)
