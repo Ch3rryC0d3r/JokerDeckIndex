@@ -88,6 +88,14 @@
     "git_url": "https://github.com/TheOneGoofAli/TOGAPackBalatro"
   },
   {
+    "id": "Spectrallib",
+    "name": "Spectrallib",
+    "author": "lord.ruby, InvalidOS",
+    "description": "A library mod designed to conglomerate widely used functions from various mods",
+    "version": "1.1.7",
+    "git_url": "https://github.com/SpectralPack/Spectrallib"
+  },
+  {
     "id": "googletranslatro",
     "name": "Google Translatro",
     "author": "Eris",
