@@ -1,19 +1,30 @@
 name: Process Mod Submission
+
 on:
   issues:
     types: [labeled]
 
+concurrency:
+  group: process-submissions
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   update-index:
-    if: github.event.label.name == 'approved'
+    if: >
+      github.event.sender.login == github.repository_owner &&
+      (github.event.label.name == 'approved' || github.event.label.name == 'approved-update')
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      issues: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,22 +42,30 @@ jobs:
         env:
           ISSUE_BODY_PATH: issue_body.txt
 
-      - name: Create Pull Request for Review
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update index from submission #${{ github.event.issue.number }}"
-          title: "Merge Mod Submission: ${{ github.event.issue.title }}"
-          body: "Closes #${{ github.event.issue.number }}. Automatically generated from mod-submission pipeline verification tools."
-          branch: "submission-update-${{ github.event.issue.number }}"
-          base: "main"
-          delete-branch: true
-          committer: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
-          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+      - name: Commit and Push Changes directly to main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name 'JokerDeckIndexer'
+          git config --global user.email 'indexer@jokerdeck.internal'
 
-      - name: Comment on Success Action
+          git pull --rebase origin main
+
+          if ! git diff --exit-code mod.json; then
+            git add mod.json
+            git commit -m "chore: update index from submission #${{ github.event.issue.number }}"
+            git push origin main
+          else
+            echo "No changes detected in mod.json."
+          fi
+
+      - name: Comment on Issue
         uses: peter-evans/create-or-update-comment@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
-          body: "Success! PR in review..."
+          body: "Success! The mod has been automatically processed and indexed into `mod.json`."
+
+      - name: Close Issue
+        run: gh issue close ${{ github.event.issue.number }} --reason "completed"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
