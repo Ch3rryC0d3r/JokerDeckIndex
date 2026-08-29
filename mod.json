@@ -1,5 +1,37 @@
 [
   {
+    "id": "Acepack",
+    "name": "AcePack",
+    "author": "ebicthings",
+    "description": "Get jiggy with it!",
+    "version": "1.0.3",
+    "git_url": "https://github.com/6543ozne/Acepack_new"
+  },
+  {
+    "id": "BalaCats",
+    "name": "BalaCats",
+    "author": "Hazelpy, Others",
+    "description": "Will these Cats take over the world?",
+    "version": "1.0.1-dev",
+    "git_url": "https://git.gay/hazelpy/BalaCats"
+  },
+  {
+    "id": "bdash",
+    "name": "Balatro Dash",
+    "author": "FireIce, Gud",
+    "description": "Adds a whole lot of things based on Geometry Dash Levels and Icons!",
+    "version": "0.0.2c",
+    "git_url": "https://github.com/FireIce421/BalatroDash"
+  },
+  {
+    "id": "cartomancer",
+    "name": "Cartomancer",
+    "author": "stupxd aka stupid",
+    "description": "Quality of life features and optimizations",
+    "version": "4.17c",
+    "git_url": "https://github.com/stupxd/Cartomancer"
+  },
+  {
     "id": "Cryptid",
     "name": "Cryptid",
     "author": "MathIsFun_, Cryptid and Balatro Discords",
@@ -16,20 +48,12 @@
     "git_url": "https://github.com/Breezebuilder/DismissAlert"
   },
   {
-    "id": "bdash",
-    "name": "Balatro Dash",
-    "author": "FireIce, Gud",
-    "description": "Adds a whole lot of things based on Geometry Dash Levels and Icons!",
-    "version": "0.0.2c",
-    "git_url": "https://github.com/FireIce421/BalatroDash"
-  },
-  {
-    "id": "BalaCats",
-    "name": "BalaCats",
-    "author": "Hazelpy, Others",
-    "description": "Will these Cats take over the world?",
-    "version": "1.0.1-dev",
-    "git_url": "https://git.gay/hazelpy/BalaCats"
+    "id": "googletranslatro",
+    "name": "Google Translatro",
+    "author": "Eris",
+    "description": "Adds language where everything is badly google translated",
+    "version": "1.1.0b",
+    "git_url": "https://github.com/borb43/google-translatro"
   },
   {
     "id": "HangedMan",
@@ -40,20 +64,12 @@
     "git_url": "https://github.com/KusaneHexaku/Hanged-Man"
   },
   {
-    "id": "picubedsjokers",
-    "name": "pi_cubed's Jokers",
-    "author": "pi_cubed",
-    "description": "A collection of vanilla-friendly Jokers (and more) made by yours truly.",
-    "version": "2.2.6",
-    "git_url": "https://github.com/pi-cubed-cat/pi_cubeds_jokers"
-  },
-  {
-    "id": "cartomancer",
-    "name": "Cartomancer",
-    "author": "stupxd aka stupid",
-    "description": "Quality of life features and optimizations",
-    "version": "4.17c",
-    "git_url": "https://github.com/stupxd/Cartomancer"
+    "id": "hypernova",
+    "name": "Hypernova",
+    "author": "Eris, & more",
+    "description": "cool funny stuff mod lmao",
+    "version": "0.5.1~dev",
+    "git_url": "https://github.com/borb43/Hypernova"
   },
   {
     "id": "LuckyRabbit",
@@ -64,14 +80,6 @@
     "git_url": "https://github.com/Trif3ctal/Lucky-Rabbit"
   },
   {
-    "id": "Oscillate",
-    "name": "Oscillate",
-    "author": "Breuhh",
-    "description": "antman: quantum maniacal",
-    "version": "1.0",
-    "git_url": "https://github.com/PissBoyBreuhh/Oscillate"
-  },
-  {
     "id": "manifold",
     "name": "Manifold",
     "author": "ouiiskey",
@@ -80,12 +88,20 @@
     "git_url": "https://github.com/ouiiskey/Manifold"
   },
   {
-    "id": "TOGAPack",
-    "name": "TOGA's Stuff",
-    "author": "TheOneGoofAli",
-    "description": "Personal timewaster project with a few references here and there.",
-    "version": "1.15.0a",
-    "git_url": "https://github.com/TheOneGoofAli/TOGAPackBalatro"
+    "id": "Oscillate",
+    "name": "Oscillate",
+    "author": "Breuhh",
+    "description": "antman: quantum maniacal",
+    "version": "1.0",
+    "git_url": "https://github.com/PissBoyBreuhh/Oscillate"
+  },
+  {
+    "id": "picubedsjokers",
+    "name": "pi_cubed's Jokers",
+    "author": "pi_cubed",
+    "description": "A collection of vanilla-friendly Jokers (and more) made by yours truly.",
+    "version": "2.2.6",
+    "git_url": "https://github.com/pi-cubed-cat/pi_cubeds_jokers"
   },
   {
     "id": "Spectrallib",
@@ -96,19 +112,11 @@
     "git_url": "https://github.com/SpectralPack/Spectrallib"
   },
   {
-    "id": "googletranslatro",
-    "name": "Google Translatro",
-    "author": "Eris",
-    "description": "Adds language where everything is badly google translated",
-    "version": "1.1.0b",
-    "git_url": "https://github.com/borb43/google-translatro"
-  },
-  {
-    "id": "hypernova",
-    "name": "Hypernova",
-    "author": "Eris, & more",
-    "description": "cool funny stuff mod lmao",
-    "version": "0.5.1~dev",
-    "git_url": "https://github.com/borb43/Hypernova"
+    "id": "TOGAPack",
+    "name": "TOGA's Stuff",
+    "author": "TheOneGoofAli",
+    "description": "Personal timewaster project with a few references here and there.",
+    "version": "1.15.0a",
+    "git_url": "https://github.com/TheOneGoofAli/TOGAPackBalatro"
   }
 ]
