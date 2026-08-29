@@ -11,7 +11,6 @@ concurrency:
 permissions:
   contents: write
   issues: write
-  pull-requests: write
 
 jobs:
   update-index:
@@ -23,8 +22,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -42,28 +42,21 @@ jobs:
         env:
           ISSUE_BODY_PATH: issue_body.txt
 
-      - name: Commit and Push Changes directly to main
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and Push Changes
         run: |
-          git config --global user.name 'JokerDeckIndexer'
-          git config --global user.email 'indexer@jokerdeck.internal'
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git pull --rebase origin main
+          git fetch origin main
+          git checkout main
 
-          if ! git diff --exit-code mod.json; then
+          if [ -n "$(git status --porcelain mod.json)" ]; then
             git add mod.json
             git commit -m "chore: update index from submission #${{ github.event.issue.number }}"
             git push origin main
           else
             echo "No changes detected in mod.json."
           fi
-
-      - name: Comment on Issue
-        uses: peter-evans/create-or-update-comment@v4
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: "Success! The mod has been automatically processed and indexed into `mod.json`."
 
       - name: Close Issue
         run: gh issue close ${{ github.event.issue.number }} --reason "completed"
