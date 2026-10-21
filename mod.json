@@ -24,6 +24,14 @@
     "git_url": "https://github.com/FireIce421/BalatroDash"
   },
   {
+    "id": "BustedBuffoons",
+    "name": "Busted Buffoons",
+    "author": "FirstTry",
+    "description": "A small content mod containing jokers i made in my free time, feel free to throw tomatoes. I highly suggest you play this mod with cryptid, even though it can work without it. Music Credits: NI4NI - Vylet Pony, Ultrakill 8-3 Theme No.3 - Event Horizon (COMBAT) - Heaven Pierce Her, Thousand March - Mr. Sauceman",
+    "version": "1.9.4",
+    "git_url": "https://github.com/TheActualFirstTry/BUSTED-BUFFOONS"
+  },
+  {
     "id": "cartomancer",
     "name": "Cartomancer",
     "author": "stupxd aka stupid",
